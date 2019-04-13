@@ -1,0 +1,18 @@
+{% extends 'book/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<p1>THIS IS MY BOOkS</p1>
+
+
+<ul>
+{% for book in books %}
+
+  <li> <a href="book_details/{{book.bid}}">{{ book.title }}</a>  </li>
+  
+{% endfor %}
+</ul>
+
+
+{% endblock %}

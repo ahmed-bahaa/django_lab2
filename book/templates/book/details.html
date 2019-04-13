@@ -1,0 +1,34 @@
+{% extends 'book/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<p1>BOOK ID:</p1> <br>
+{{book.bid}}
+<br>
+<p1>BOOK NAME</p1><br>
+{{book.title}}<br>
+
+<br>
+<p1>BOOK comments</p1>
+<br>
+
+<ul>
+{% for comment in comments %}
+  <li> <a href="#">{{ comment.title }}</a>  </li>
+  <li> <a href="#">{{ comment.email }}</a>  </li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'author_details' book.author_id.id %}">{{ book.author }}</a>  
+
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
+

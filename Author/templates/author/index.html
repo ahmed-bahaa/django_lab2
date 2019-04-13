@@ -1,0 +1,18 @@
+{% extends 'book/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<p1>THIS IS AUTHOR BOOKS</p1>
+
+
+<ul>
+{% for book in books %}
+
+  <li> <a href="#">{{ book.title }}</a>  </li>
+  
+{% endfor %}
+</ul>
+
+
+{% endblock %}
